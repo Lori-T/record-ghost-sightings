@@ -1,19 +1,55 @@
 {% extends "layouts/main.html" %}
 
-{% set pageName="Home" %}
+{% block pageTitle %}
+<!-- Intentional issue: Missing descriptive page title (2.4.2) -->
+Record a ghost sighting
+{% endblock %}
+
 
 {% block content %}
 
 <div class="govuk-grid-row">
+
   <div class="govuk-grid-column-two-thirds">
+ 
 
-    {% include "govuk-prototype-kit/includes/homepage-top.njk" %}
+     <img src="{{asset_path}}images/dsa_logo_full_crown.png"
+               alt="Department for Supernatural Affairs logo" width="50%" height="50%" class="page-logo"> <h1 class="govuk-heading-xl">Trainer dashboard</h1>
 
-    <h1 class="govuk-heading-xl">
-      {{ serviceName }}
-    </h1>
+    <p class="govuk-body">
+      This page lets you jump to any screen in the <strong>Record a ghost sighting</strong> prototype.  
+      Use it to explore or test specific accessibility issues without completing the full journey.
+    </p>
 
-    {% include "govuk-prototype-kit/includes/homepage-bottom.njk" %}
+    <h2 class="govuk-heading-m">Pages with intentional accessibility issues</h2>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a href="/start">Start page</a> — missing title, low contrast, no alt text</li>
+      <li><a href="/location">Where did you see the ghost?</a> — label and focus issues</li>
+      <li><a href="/description">What did the ghost look like?</a> — missing alt text, poor contrast</li>
+      <li><a href="/date">When did you see the ghost?</a> — incorrect fieldset, reflow issue</li>
+      <li><a href="/interaction">Did the ghost interact with you?</a> — keyboard and conditional issues</li>
+      <li><a href="/check-answers">Check your answers</a> — duplicate link text, table structure issues</li>
+      <li><a href="/confirmation">Confirmation page</a> — heading and resize issues</li>
+    </ul>
+
+    <h2 class="govuk-heading-m">Reference and accessible pages</h2>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a href="/feedback">Feedback page (accessible example)</a></li>
+      <li><a href="/results">Accessibility issues summary</a></li>
+    </ul>
+
+    <h2 class="govuk-heading-m">Testing ideas</h2>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Try using only the keyboard to move through the journey</li>
+      <li>Zoom in to 400% and check layout and reflow</li>
+      <li>Use a screen reader to identify missing labels or names</li>
+      <li>Check colour contrast for text and buttons</li>
+      <li>Look for inconsistent or unclear link purpose</li>
+    </ul>
+
   </div>
 </div>
 

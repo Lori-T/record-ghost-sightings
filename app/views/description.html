@@ -1,0 +1,47 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  What did the ghost look like? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">What did the ghost look like?</h1>
+
+    <form action="/location" method="post">
+
+      <label class="govuk-label" for="description">Describe the ghost</label>
+      <textarea class="govuk-textarea" id="description" name="description"></textarea>
+
+      <p class="govuk-hint" style="color: #999;">
+        You can include details such as clothing, glow colour or level of spookiness. If you took a picture of the ghost or find it easier to draw this you can upload a file.
+      </p>
+      <!-- Intentional issue: Poor contrast hint (1.4.3) -->
+
+      <p>
+        <img src="/public/images/upload-icon.svg">
+        <!-- Intentional issue: Missing alt text (1.1.1) -->
+        <input class="govuk-file-upload" id="receipt" name="receipt" type="file">
+      </p>
+
+      <!-- Intentional issue: ARIA name missing (4.1.2) -->
+
+      <button class="govuk-button">Continue</button>
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+

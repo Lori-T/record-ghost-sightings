@@ -1,0 +1,61 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+<!-- Intentional issue: Missing descriptive page title (2.4.2) -->
+Record a ghost sighting
+{% endblock %}
+
+
+{% block beforeContent %}
+
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "#"
+      },
+      {
+        text: "Record supernatural sightings",
+        href: "#"
+      },
+      {
+        text: "Record a ghost sighting"
+      }
+    ]
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">Record a ghost sighting</h1>
+
+    <p>Use this service to tell the Department for Supernatural Affairs if you’ve seen a ghost.</p>
+
+    <p>You’ll need:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>the location of the sighting</li>
+      <li>a short description of what you saw</li>
+      <li>the date of the sighting</li>
+    </ul>
+
+    <img src="{{asset_path}}images/ghost_logo_crown.png" width="50%" height="50%"
+               alt=""
+    <!-- Intentional issue: Decorative image without alt text (1.1.1) -->
+
+    <form action="/description" method="post">
+      <button class="govuk-button" style="background-color: #888;">
+        Start now
+      </button>
+      <!-- Intentional issue: Low contrast button (1.4.3) -->
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
